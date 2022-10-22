@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Franks Balance Planner</title>
+    <!-- https://electronjs.org/docs/tutorial
+                           /security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/default.css">
+</head>
+
+<body>
+    <div class="title-bg">
+      <h1>Franks Balance Planner</h1>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-button">Themes</button>
+      <button class="theme-content" id="defaultTheme">Default Theme</button>
+      <button class="theme-content" id="surf">Surf Theme</button>
+      <button class="theme-content" id="espresso">Espresso Theme</button>
+      <button class="theme-content" id="marina">Marina Theme</button>
+      <button class="theme-content" id="luna">Luna Theme</button>
+    </div>
+    <div class="work-bg">
+        <h2 class="expense-title">Expenses</h2>
+        <form onsubmit="return false;" action="#" class="expense-input" id="expense-input">
+          <label>Groceries:</label><br>
+          <input type="number" id="groceries" name="groceries" size="12"><br>
+          <label>Rent:</label><br>
+          <input type="number" id="rent" name="rent" size="12"><br>
+          <label>Gas:</label><br>
+          <input type="number" id="gas" name="gas" size="12"><br>
+          <label>Entertainment:</label><br>
+          <input type="number" id="entertainment" name="entertainment" size="12"><br>
+          <label>Misc:</label><br>
+          <input type="number" id="misc" name="misc" size="12">
+        </form>
+        <button type="submit" form="expense-input" id="expense-input-button"><i class="material-icons">arrow_forward</i></button>
+        <div class="budget-holder">
+          <h2 id="budget-title">Budget</h2>
+          <p id="groceriesTrackingValue">0</p>
+          <div id="tracking-value-div"></div>
+          <p id="rentTrackingValue">0</p>
+          <div id="tracking-value-div"></div>
+          <p id="gasTrackingValue">0</p>
+          <div id="tracking-value-div"></div>
+          <p id="entertainmentTrackingValue">0</p>
+          <div id="tracking-value-div"></div>
+          <p id="miscTrackingValue">0</p>
+        </div>
+        <div id="budget-settings-panel">
+          <form action="#" class="budget-input" id="budget-input">
+            <input type="number" id="groceriesBudget" name="groceries" size="8"><br>
+            <input type="number" id="rentBudget" name="rent" size="6"><br>
+            <input type="number" id="gasBudget" name="gas" size="6"><br>
+            <input type="number" id="entertainmentBudget" name="entertainment" size="6"><br>
+            <input type="number" id="miscBudget" name="misc" size="6"><br>
+          </form>
+        </div>
+        <button type="submit" form="budget-input" id="budget-settings-button"><i class="material-icons">settings</i></button>
+        <div id="digital-clock-bg">
+          <div id="clock"></div>
+          <div id="date"></div>
+        </div>
+        <div id="console-seperator"></div>
+        <div id="console"></div>
+        <div id="utility-panel">
+        <button id="clear-console-button"><i class="material-icons">soap</i></button>
+        <button id="reset-windowSize-button"><i class="material-icons">reset_tv</i></button>
+        </div>
+        <button id="utility-panel-button"><i style="font-size: 14px !important;" class="material-icons">more_horiz</i></button>
+        
+    </div>
+    <div id="total-settings-panel">
+      <form onsubmit="return false;" action="#" class="total-input" id="total-input">
+        <input type="number" id="expenseTotal" name="expense" size="8">
+        <input type="number" id="total" name="total" size="8">
+        <input type="number" id="incomeTotal" name="income" size="8">
+      </form>
+    </div>
+    <div class="totals-bg" id="totals-bg">
+      <div id="total-icon-box">
+        <button type="submit" form="total-input" id="total-settings-button"><i class="material-icons">settings</i></button>
+      </div>
+      <div id="total-expense-box">
+          <p id="total-expense-value">0</p>
+          <p id="total-expense-label">Expenses</p>
+        </div>
+        <div id="total-value-box">
+          <p id="total-total-value">0</p>
+          <p id="total-label">Total</p>
+        </div>
+        <div id="total-income-box">
+          <p id="total-income-value">0</p>
+          <p id="total-income-label">Income</p>
+        </div>
+        <div id="total-icon-box">
+          <!-- <button id="total-settings-button"><i class="material-icons">settings</i></button> -->
+        </div>
+    </div>
+    <!-- Adding Individual Renderer Process JS File -->
+    <script src="themeHandler.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

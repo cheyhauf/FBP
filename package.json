@@ -1,0 +1,17 @@
+{
+  "name": "franks-balance-planner",
+  "version": "1.0.1",
+  "description": "To assist Queen Frank",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "nA",
+  "author": "Chey Hauf",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "electron": "8.3.0",
+    "electron-store": "^8.0.2"
+  }
+}
